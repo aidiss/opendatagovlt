@@ -1,0 +1,1231 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="no" lang="no">
+
+<head>
+<title>Informacijos rinkmenø sàraðas</title>
+
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="/sitedesign/intranet/style.css" />
+<link rel="stylesheet" type="text/css" href="/widgets/calendar/styles/calendar.css" />
+
+<style>
+#container {
+position : absolute;
+left : 100px;
+top : 100px;
+width : 124px;
+height : 140px;
+clip:rect(0px 124px 140px 0px);
+visibility : hidden;
+background-color : #ffffff
+}
+</style>
+
+<script language="JavaScript1.2">
+<!--//
+
+   function MM_swapImgRestore()
+   {
+      var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+   }
+
+   function MM_preloadImages()
+   {
+      var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+      var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+      if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+   }
+
+   function MM_findObj(n, d)
+   {
+      var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+      d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+      if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+      for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document); return x;
+   }
+
+   function MM_swapImage()
+   {
+      var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+      if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+   }
+
+     function storeCaret (textEl) {
+       if (textEl.createTextRange) 
+         textEl.caretPos = document.selection.createRange().duplicate();
+     }
+     function insertAtCaret (textEl, text) {
+       if (textEl.createTextRange && textEl.caretPos) {
+         var caretPos = textEl.caretPos;
+         caretPos.text =
+           caretPos.text.charAt(caretPos.text.length - 1) == ' ' ?
+             text + ' ' : text;
+       }
+       else
+         textEl.value  = text;
+     }
+function add_text(txt, txt2, diva)
+{
+var str1="<input type=\"checkbox\" name=\"cid"+txt+"\" value=\""+txt+"\">";
+var str2="<input type=\"hidden\" name=\"hid"+txt+"\" value=\""+txt+"\">";
+
+
+diva.innerHTML+="<br><span class=\"text\">"+txt2+" </span>"+str1+str2;	
+}
+function setCookie(name, value, expire) 
+{
+	expire = new Date();
+	var day=expire.getDate()+1;
+	expire.setUTCDate(day);
+	document.cookie = name + "=" + escape(value)+ "; expires=" + expire.toGMTString() +";PATH=/";
+}
+function delCookie(sName)
+{
+  document.cookie = sName + "=" +"  " + "; expires=Fri, 31 Dec 1999 23:59:59 GMT;";
+}
+
+function suppress (whichEl, Image1) {
+ whichEl = document.getElementById(whichEl);
+ Image1 = document.getElementById(Image1);
+ Image1.src= (whichEl.style.display == "none" ) ? "/images/minus.gif":"/images/plius.gif";
+ whichEl.style.display = (whichEl.style.display == "none" ) ? "block" : "none";
+ 
+ var cookie_name=whichEl.id
+ delCookie(cookie_name);
+ setCookie(cookie_name, whichEl.style.display );
+}
+
+function getCookie(Name) 
+{
+	var search = Name + "="
+	if (document.cookie.length > 0) 
+		{ // if there are any cookies
+			offset = document.cookie.indexOf(search)
+			if (offset != -1) 
+			{ // if cookie exists
+				offset += search.length
+				// set index of beginning of value
+				end = document.cookie.indexOf(";", offset)
+				// set index of end of cookie value
+				if (end == -1)
+					end = document.cookie.length
+				return unescape(document.cookie.substring(offset, end))
+			}
+		}
+}
+
+function checkCookies()
+{
+	var administravimas_view=getCookie("Administravimas_menu");
+	if ((administravimas_view !=null)&&(administravimas_view=="none") && (document.forms["administravimasform"]!=null))
+	{
+		suppress("Administravimas_menu", "AImage");
+	}
+
+	var zinynai_view=getCookie("Zinynai_menu");
+	if ((zinynai_view !=null)&&(zinynai_view=="none") && (document.forms["zinynaiform"]!=null))
+	{
+		suppress("Zinynai_menu", "ZImage");
+	}
+	
+	var rinkmena_view=getCookie("Rinkmena_menu");
+	if ((rinkmena_view !=null)&&(rinkmena_view=="none") && (document.forms["rinkmenaform"]!=null))
+	{
+		suppress("Rinkmena_menu", "RImage");
+	}
+	//}
+	
+	var public_view=getCookie("Public_menu");
+	if ((public_view !=null)&&(public_view=="none") && (document.forms["publicform"]!=null))
+	{
+		suppress("Public_menu", "PImage");
+	}
+	//}
+	
+	//window.alert(document.cookie);
+}
+var mail_suppress="none";
+//-->
+</script>
+
+<!-- set the content meta information -->
+
+<meta name="author" content="iraida" />
+<meta name="copyright" content="strict" />
+<meta name="description" content="" />
+<meta name="keywords" content="ivpk" />
+<meta name="MSSmartTagsPreventParsing" content="TRUE">
+
+</head>
+
+<body  topmargin="6" marginheight="6" leftmargin="6" marginwidth="6" background="/images/background.gif">
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+   <td>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr valign="top">
+
+ <!--   <td width="1%" bgcolor="#f0f0f0" valign="top"> -->
+ <td width="1%" bgcolor="#f0f0f0" valign="top">
+<img src="/images/1x1.gif" width="170" height="1" border="0" alt="" />
+    <!-- Right menu start -->
+
+	<form method="post" action="/index.php?vars=/user/login/login/"><table width="100%" cellspacing="0" cellpadding="2" border="0"><tr>	<td colspan="2" class="menuhead">Duomenø tvarkytojams</td></tr><tr>	<td colspan="2" class="menubold">	Naudotojo vardas:	</td></tr><tr>	<td colspan="2" class="menu">	<input type="text" size="6" name="Username" style="width:120px" />	</td></tr><tr>	<td colspan="2" class="menubold">	Slaptaþodis:	</td></tr><tr>	<td colspan="2" class="menu">	<input type="password" size="6" name="Password" style="width:120px" />	</td></tr><tr>	<td colspan="2">	<input class="stdbutton" type="submit" value="Prisijungti">	</td></tr><tr>	<td colspan="2" class="menuspacer">&nbsp;</td></tr><tr>	<td colspan="2" class="menuspacer">&nbsp;</td></tr><tr>	<td width="1%" valign="top"><img src="/other/images/dot.gif" width="10" height="12" border="0" alt="" /><br /></td>	<td>		<a href="/2006-06-13_ISAKYMAS_NR_T-50_DEL_DUOMENU_INFORMACIJOS_RINKMENU_SARASUI_PATEIKIMO_TAISYKLIU_PATVIRTINIMO.pdf">Duomenø pateikimo taisyklës</a>	</td></tr><tr>	<td width="1%" valign="top"><img src="/other/images/dot.gif" width="10" height="12" border="0" alt="" /><br /></td>	<td>		<a href="/2006-07-12_ISAKYMAS_NR_T-65_DEL_INFORMACIJOS_RINKMENU_SARASO_NUOSTATU_PATVIRTINIMO.pdf">Informacijos rinkmenø sàraðo nuostatai</a>	</td></tr><tr>	<td colspan="2" class="menuspacer">&nbsp;</td></tr><tr>	<td colspan="2" class="menuspacer">&nbsp;</td></tr></table><input type="hidden" name="RedirectURL" value="/public/public/search/0/"></form>       <img src="/images/1x1.gif" width="13" height="1" border="0" alt="" /><br />
+<script>
+checkCookies();
+</script>
+<!-- Right menu end -->
+
+   <img src="/images/1x1.gif" width="130" height="20" border="0" alt="" /><br />
+   <img src="/images/1x1.gif" width="130" height="8" border="0" alt="" /><br />
+
+   </td>
+
+   <td width="1%"><img src="/images/1x1.gif" width="20" height="1" border="0" alt="0" /></td>
+   <td width="75%"> <br />
+<!-- Main content view start -->
+   
+<SCRIPT language=JavaScript src="/widgets/calendar/javascript/simplecalendar.js" type=text/javascript></SCRIPT>
+<SCRIPT language="JavaScript" >
+
+function setToNull() {
+  document.getElementById("Pavadinimas").value = "";
+  document.getElementById("Kodas").value = "";
+  document.getElementById("Istaiga_ID").selectedIndex = 0;
+  document.getElementById("Zodziai").value = "";
+  document.getElementById("Rusis_ID").selectedIndex = 0;
+  document.getElementById("Formatas_ID").selectedIndex = 0;
+  document.getElementById("DataNuo").value = "";
+  document.getElementById("DataIki").value = "";
+  document.getElementById("Patikimumas").value = "";
+  document.getElementById("Issamumas").value = "";
+  document.getElementById("IssamumasNuo").value = "";
+  document.getElementById("IssamumasIki").value = "";
+  document.getElementById("ID_list").checked = false;
+  document.getElementById("turinys").innerHTML = "";
+  document.getElementById("tur_count").value = 0;
+  document.getElementById("last_nr").value = 0;
+  document.getElementById("id_coll").value = ".";
+  document.getElementById("Lygis1_ID").selectedIndex = 0;
+  if (document.getElementById("Lygis2_ID"))
+    document.getElementById("Lygis2_ID").innerHTML = "";
+  if (document.getElementById("Lygis3_ID"))
+    document.getElementById("Lygis3_ID").innerHTML = "";
+}
+
+//kategorijos iraso struktura: parent_id.id.pavadinimas
+l1_arr = Array(".0.", ".1.Ekonomika ir finansai", ".2.Kultûra", ".3.Aplinka", ".4.Sveikatos apsauga", ".5.Socialinë apsauga", ".6.Ûkinë veikla ir verslas", ".11.Valstybës valdymas, vieðasis administravimas", ".12.Þemës ûkis", ".152.Ðvietimas ir mokslas", ".164.Teisësauga ir teisëtvarka", ".185.Transportas ir ryðiai", ".248.Poilsis, kultûra ir religija");
+l2_arr = Array("3.13.Þemë", "3.15.Pastatai ir statiniai", "3.23.Vandenys", "3.35.Aplinkos tarða", "3.40.Aplinkos prieþiûra", "2.51.Bibliotekos", "2.57.Kultûros paveldas", "2.65.Sportas ir turizmas", "1.77.Statistika", "1.82.Kontrolë", "1.83.Valstybës turtas", "1.84.Vertybiniai popieriai", "1.85.Finansiniai dokumentai", "6.95.Juridiniai asmenys", "6.96.Gyventojai", "6.97.Juridiniø asmenø veiklos reguliavimas", "6.98.Nekilnojamasis turtas", "6.108.Pramoninë nuosavybë", "6.114.Verslo praktika ir reguliavimas", "6.115.Smulkus ir vidutinis verslas", "6.119.Prekyba ir paslaugos", "5.128.Uþimtumas", "4.134.Sveikatos ástaigos", "4.141.Sveikatos prieþiûros ir farmacijos specialistai", "4.142.Ligos", "4.149.Donorystë", "152.153.Mokymas", "152.154.Mokymo procesas", "164.166.Turtiniai ir teisiniai santykiai", "164.167.Nusikalstama veikla, kiti ávykiai", "164.168.Ginklai", "185.192.Transporto priemonës", "185.200.Telekomunikacijos ir ryðiai", "11.224.Valdymas ir savivalda", "12.229.Þemës ûkio veikla", "12.230.Þemës ûkio investicijos", "12.231.Veterinarija");
+
+
+function setL2(parent_id) { //uzpildo 2 lygio kategorijas
+    var str = "<select style='width:75%' id='Lygis2_ID' name='Lygis2_ID' onChange='clearL3();setL3(this.value)'><option></option>";
+    var l2_str = "";
+    for (i=0;i<l2_arr.length;i++) {
+        l2_str = l2_arr[i].split(".");
+        if (l2_str[0]==parent_id) {
+        //pasiemam pirma tinkanti irasa, ji panaudosim nustatyti trecio lygio kategorijas  
+            str += "<option value=\""+l2_str[1]+"\">"+l2_str[2]+"</option>";
+        }    
+    }
+    str += "</select>";
+    document.getElementById("lygis2").innerHTML = str;
+}
+
+function clearL2() {
+    document.getElementById("lygis2").innerHTML = "";
+}
+
+function clearL3() {
+    document.getElementById("lygis3").innerHTML = "";
+}
+
+l3_arr = Array("224.225.Valdþios institucijos", "82.87.Investicijos", "82.86.Operacijos pinigais", "77.81.Statistinë analizë", "84.92.Vertybiniai popieriai", "84.93.Vertybiniø popieriø cirkuliacijos", "84.94.Vertybiniø popieriø rinkos dalyviai", "153.156.Studijø ir mokymo programos", "108.109.Iðradimai", "108.112.Patentai", "108.111.Dizainas", "108.113.Prekiniai ir paslaugø þenklai", "192.196.Jûrø transporto priemonës", "224.226.Savivaldos institucijos", "168.180.Ginklø registravimas", "168.181.Ginklø kontrolë", "229.239.Þemës ûkio ir kaimo verslas", "229.240.Augalininkystë", "192.197.Vidaus vandenø transporto priemonës", "57.59.Kultûros vetybës", "149.150.Kraujo donorai", "57.60.Restauruojami objektai", "231.246.Veterinariniai vaistai", "149.151.Þmogaus audiniø, làsteliø ir organø donorai bei re", "166.170.Nekilnojamojo turto nuosavybë", "40.49.Þemëlapiai", "229.241.Gyvulininkystë", "134.135.Ligoninës", "134.136.Poliklinikos", "142.143.Profesinës ligos", "166.175.Hipoteka", "166.172.Vedybinës sutartys", "166.171.Turto areðtas", "166.173.Testamentai", "166.174.Ûkio subjektø sutartys", "57.61.Archeologiniai objektai", "134.137.Psichikos sveikatos centrai", "134.139.Reabilitacijos bendruomenës", "134.138.Sanatorijos", "57.58.Dvarø sodybos", "65.66.Sporto árenginiai ir paslaugos", "153.157.Iðsilavinimo paþymëjimai", "153.158.Kvalifikacijos këlimas", "153.159.Mokymo licencijos", "153.160.Profesinis mokymas", "153.155.Ðvietimo, mokslo ir studijø ástaigos", "154.162.Moksleiviai", "154.161.Mokytojai", "154.163.Studentai", "23.24.Upës", "23.25.Eþerai ir tvenkiniai", "128.129.Laisvos darbo vietos", "65.68.Sporto organizacijos", "224.227.Valstybës tarnautojai");
+
+function setL3(parent_id) { //uzpildo 3 lygio kategorijas
+    var str = "<select multiple style='width:75%' size = '8' id='Lygis3_ID' name='Lygis3_ID'>";
+    var l3_str = "";
+    for (i=0;i<l3_arr.length;i++) {
+        l3_str = l3_arr[i].split(".");
+        if (l3_str[0]==parent_id) {
+            str += "<option value=\""+l3_str[1]+"\" >"+l3_str[2]+"</option>";
+        }    
+    }
+    str += "</select>";
+    document.getElementById("lygis3").innerHTML = str;
+}
+
+function addKat() { //prideda kategorija i sarasa
+    if (document.getElementById("Lygis1_ID").value == 0) {
+        alert("Nepasirinkta nei viena kategorija");
+    } else {
+        if (document.getElementById("Lygis2_ID").value == 0) {
+            addKatLygis(1);
+        } else {
+            if (document.getElementById("Lygis3_ID").value == 0) {
+                addKatLygis(2);    
+            } else {
+                addKatLygis(3);
+            }
+        }
+    }
+    
+}
+
+function getParent(lygis, id) { //gauna teviniu kategoriju pavadinimus
+    var arr_base = Array();
+    var arr_parent = Array();
+    var cont = false;
+    if (lygis==3) {
+        arr_base = l3_arr;
+        arr_parent = l2_arr;
+        cont = true;
+    } else if (lygis==2) {
+        arr_base = l2_arr;
+        arr_parent = l1_arr;
+    } else {
+        return false;
+    }
+    
+    var str_base = "";
+    var str_parent = "";
+    var rs = "";
+    for (k=0;k<arr_base.length;k++) {
+        str_base = arr_base[k].split(".");
+        if (str_base[1]==id) {
+            for (j=0;j<arr_parent.length;j++) {
+                str_parent = arr_parent[j].split(".");
+                if (str_base[0]==str_parent[1]) {
+                    if (cont) { //jei trecias lygis, tai rekursyviai kvieciame metoda antram lygiui
+                       rs = getParent(2, str_parent[1]) + " | " + str_base[2];
+                       return rs;
+                    }
+                rs = str_parent[2] + " | " + str_base[2];
+                return rs;
+                }
+            }
+        }
+    }
+}
+
+function addKatLygis(kID) { //iesko pagal lygi pazymetu kategoriju
+    var opt = document.getElementById("Lygis"+kID+"_ID").options;
+    var rs = "";
+    for (i=0;i<opt.length;i++) {
+        if (opt[i].selected && !optionExists(opt[i].value)) {
+            rs = getParent(kID,opt[i].value);
+            if (rs) {
+                addOption(opt[i].value, rs);
+            } else {
+                addOption(opt[i].value, opt[i].text);
+            }
+        }
+    }
+}
+
+var lauku_sk = 1;
+
+function optionExists(id) { //tikrina ar kategorija nera jau ideta
+    if (document.getElementById('id_coll').value.match("."+id+".")) {
+        alert ("Kategorija jau pasirinkta");
+        return true;   
+    } else {
+        return false;
+    }
+}
+
+function addOption(id, text) { //prideda kategorija i sarasa
+var oRow, oCell, oTable, tur_count, last_nr, ls, cRow;
+
+tur_count = document.frm.tur_count.value;
+tur_count = parseInt(tur_count);
+last_nr =document.frm.last_nr.value;
+last_nr = parseInt(last_nr);
+ls = parseInt(lauku_sk);
+
+oTable = document.getElementById('turinys');
+cRow = 0;
+
+oRow =oTable.insertRow((tur_count * ls) + cRow);
+oCell = oRow.insertCell(0);
+oCell.className="kat_selected";
+strh = text;
+oCell.innerHTML = strh;
+
+oCell = oRow.insertCell(1);
+oCell.className="std_button";
+strh = '<input name="DeleteTur_'+last_nr+'" class="stdbutton" type="button"  value="Iðtrinti" onClick="delTur('+last_nr+', '+id+');">';
+oCell.innerHTML = strh;
+
+cRow++;
+
+tur_count = tur_count + 1;
+document.getElementById('tur_count').value = tur_count;
+last_nr = last_nr + 1;
+document.getElementById('last_nr').value = last_nr;
+document.getElementById('id_coll').value += id+"."; //pridedam id i sarasa
+
+return true;
+}
+
+function delTur(trinamas_nr, id) { //istrina kategorija
+  var oTable, tur_count, ls, nr, rowCnt, ind1, ind2, ht, item, ilgis, nChar, nuo;
+  oTable = document.getElementById('turinys');
+  tur_count =document.frm.tur_count.value;
+  tur_count = parseInt(tur_count);
+  ls = parseInt(lauku_sk);
+  lauku_sk = parseInt(lauku_sk);
+
+
+  // Reikia surasti kelinta lenteles eilute
+   var x =  document.getElementById('turinys').rows;
+   rowCnt = x.length;
+   for (i = 0; i < rowCnt; i++) {
+        var y = x[i].cells;
+        //ieskomas indeksas einantis po DeleteTur_
+        if  ((i % ls) == 0) {
+            ht = y[1].innerHTML;
+			ilgis = ht.length;
+			// Paimsime Delete mygtuka
+            ind1 = ht.indexOf('DeleteTur_');
+            nuo =  ind1 + 10;
+            for (ind2 = nuo; ind2 <= ilgis-1; ind2++ ) {
+                nChar = ht.charAt(ind2);
+                if ((parseInt(nChar,10) >= 0 && parseInt(nChar, 10) <= 9) == false) {break;}
+            }
+	        // Paimame numeri einanti po DeleteTur_
+            item = ht.substring(nuo, ind2);
+            if  (item == trinamas_nr) {
+                nr = (i - lauku_sk) / (lauku_sk);
+                nr++;
+				break;
+            }
+
+        }
+   }
+
+
+  if (nr >=0) {
+    for (j = 0; j < ls; j++) {
+        oRow =oTable.deleteRow(nr * ls );
+    }
+    tur_count = tur_count - 1;
+    document.getElementById('tur_count').value =tur_count;
+  }
+  //istrinam id is saraso
+  
+  document.getElementById('id_coll').value = document.getElementById('id_coll').value.replace(new RegExp("."+id+"."),".");
+}
+
+var searchFormStatus = 0;
+function showHideSearchForm() {
+	if (searchFormStatus == 0) {
+		document.getElementById('search_form').style.display="block";
+		document.getElementById('form_status_icon').src="/images/minus.gif";
+		searchFormStatus = 1;
+	} else {
+		document.getElementById('search_form').style.display="none";
+		document.getElementById('form_status_icon').src="/images/plius.gif";
+		searchFormStatus = 0;
+	}
+}
+</SCRIPT>
+
+<div style="text-align:right;margin-top:-10px;">
+	<button type="button" onclick="window.open('/index.php?vars=/uzklausimai/uzklausimai/new/0', '_self')" class="stdbutton" style="line-height:30px;height:32px;padding: 0 5px;">
+		<img src="/images/mail_red.gif" style="vertical-align: text-bottom;margin-right:2px;" />
+		Pateikti siûlymus ir pageidavimus dël duomenø poreikio
+	</button>
+</div>
+
+<form method="post" name="frm" action="/index.php?vars=/public/public/search/0/">
+	<h1>Informacijos rinkmenø sàraðas - ( 1 - 15 / 251 )</h1>
+
+	<hr noshade size="2">
+
+<h2 onclick="showHideSearchForm();" style="cursor:pointer;padding: 8px 0 8px 8px;margin:-6px 0;background:#f0f0f0;">
+	<img width="16" height="16" style="vertical-align:center;" id="form_status_icon" src="/images/plius.gif" />
+	Iðplëstinë paieðka
+</h2>
+<div id="search_form" style="display:none;">
+	<hr noshade size="2">
+	<div class="error"></div>
+
+	<table border="0" >
+	<tr>
+		<td><input class="stdbutton" style="width:70" type="submit"  name="Search" value="Ieðkoti" ></td>
+		<td ><input class="stdbutton"  style="width:120" type="reset"    name="Reset"   value="Atstatyti sàlygas" ></td>
+		<td ><input class="stdbutton"  style="width:110" type="button"    name="Erase"   value="Trinti sàlygas" onClick="setToNull();"></td>
+	</tr>
+	</table>
+
+	<hr noshade size="2">
+	<table width="100%" border="0">
+	<tr>
+	<th width = "30%"></th>
+	<th width = "70%"></th>
+	</tr>
+	<tr>
+		<td class="boxtext" >Kodas</td>
+		<td><input name="Kodas" id="Kodas" type="text" size="25" maxlength="25" value="" /></td>
+	</tr>
+	<tr>
+		<td class="boxtext" >Pavadinimas</td>
+		<td><input name="Pavadinimas" id="Pavadinimas" type="text" size="25" maxlength="25" value="" /></td>
+	</tr>
+	<tr>
+		<td class="boxtext">Kategorija (informacijos sritis) 1 lygis</td>
+		<td>
+		  <select style="width:75%" id="Lygis1_ID" name="Lygis1_ID" {r_kategorija} onChange='clearL2();clearL3();setL2(this.value)'>
+			
+			<option value="0"  ></option>
+			<option value="1"  >Ekonomika ir finansai</option>
+			<option value="2"  >Kultûra</option>
+			<option value="3"  >Aplinka</option>
+			<option value="4"  >Sveikatos apsauga</option>
+			<option value="5"  >Socialinë apsauga</option>
+			<option value="6"  >Ûkinë veikla ir verslas</option>
+			<option value="11"  >Valstybës valdymas, vieðasis administravimas</option>
+			<option value="12"  >Þemës ûkis</option>
+			<option value="152"  >Ðvietimas ir mokslas</option>
+			<option value="164"  >Teisësauga ir teisëtvarka</option>
+			<option value="185"  >Transportas ir ryðiai</option>
+			<option value="248"  >Poilsis, kultûra ir religija</option>
+		  </select>
+		</td>  
+	  </tr>
+	  <tr>
+		<td class="boxtext">2 lygis</td>
+		<td>
+		  <div id="lygis2">
+
+		  </div>  
+		</td>
+
+	  </tr>  
+	  <tr>
+		<td class="boxtext">3 lygis</td>
+		<td>
+		  <div id="lygis3">
+
+		  </div>  
+		</td>  
+	  </tr>
+	  <tr>
+	  <td colspan="4" align="right"><input class="stdbutton" type="button" name="Add" value="Pridëti" onClick="addKat();"></td>
+	  </tr>
+	  <tr>
+	  <td colspan="4">
+	  <table border="0" id="turinys" name="turinys">
+	  
+	  </table>
+	  <input type="hidden" name="tur_count" id="tur_count" value="0">
+	  <input type="hidden" name="last_nr" id="last_nr" value="0">
+	  <input type="hidden" name="id_coll" id="id_coll" value=".">
+	  </td>
+	  </tr>
+	<tr >
+		<td class="boxtext">Tvarkytojas</td>
+		<td>
+		  <select id="Istaiga_ID" name="Istaiga">
+			
+			<option value="0"  ></option>
+			<option value="226"  >AB „Lietuvos geleþinkeliai“ </option>
+			<option value="65"  >Alytaus apskrities vir</option>
+			<option value="75"  >Aplinkos apsaugos agentûra</option>
+			<option value="12"  >APSKRITYS</option>
+			<option value="179"  >Asmens dokumentø iðraðymo centras</option>
+			<option value="1"  >Bandomoji istaiga</option>
+			<option value="167"  >Bankrutuojanèiø ir restruktûrizuojamø ámoniø admin</option>
+			<option value="180"  >Bendrasis pagalbos centras</option>
+			<option value="103"  >Bibliotekø taryba</option>
+			<option value="218"  >Bûsto ir urbanistinës plëtros agentûra </option>
+			<option value="161"  >Centrinë hipotekos ástaiga</option>
+			<option value="223"  >Civilinës aviacijos administracija </option>
+			<option value="110"  >Darbø saugos centras</option>
+			<option value="90"  >Draudimo reikalø tarnyba</option>
+			<option value="144"  >Ekstremaliø sveikatai situacijø centras</option>
+			<option value="245"  >Europos socialinio fondo agentûra </option>
+			<option value="157"  >Europos teisës departamentas prie Teisingumo ministerijos</option>
+			<option value="127"  >Farmacijos departamentas prie Sveikatos apsaugos ministerijos</option>
+			<option value="181"  >Finansiniø nusikaltimø tyrimo tarnyba</option>
+			<option value="215"  >Generalinë miðkø urëdija prie Aplinkos ministerijos</option>
+			<option value="117"  >Ginèø komisija prie Socialinës apsaugos ir darbo ministerijos</option>
+			<option value="186"  >Gyventojø registro tarnyba</option>
+			<option value="244"  >Higienos institutas </option>
+			<option value="168"  >Ámoniø bankroto valdymo departamentas prie Ûkio ministerijos</option>
+			<option value="36"  >Informacinës visuomenës plëtros komitetas prie Susisiekimo ministerijos</option>
+			<option value="182"  >Informatikos ir ryðiø departamentas prie Vidaus reikalø ministerijos</option>
+			<option value="201"  >Ástaiga</option>
+			<option value="156"  >Kalëjimø departamentas prie Teisingumo ministerijos</option>
+			<option value="66"  >Kauno apskrities virðininko administracija</option>
+			<option value="247"  >Kauno visuomenës sveikatos centras</option>
+			<option value="102"  >Kino taryba</option>
+			<option value="13"  >KITOS</option>
+			<option value="67"  >Klaipëdos apskrities virðininko administracija</option>
+			<option value="91"  >Komisija privalomam registruoti turtui ávertinti</option>
+			<option value="17"  >Konkurencijos tarnyba</option>
+			<option value="108"  >Kultûros ministerijos ekspertø komisijos</option>
+			<option value="98"  >Kultûros paveldo departamentas prie Kultûros ministerijos</option>
+			<option value="37"  >Kûno kultûros ir sporto departamentas prie Lietuvos Respublikos Vyriausybës</option>
+			<option value="132"  >Lietuvos AIDS centras</option>
+			<option value="207"  >Lietuvos aplinkos apsaugos investicijø fondas </option>
+			<option value="64"  >Lietuvos auditoriø rûmai</option>
+			<option value="123"  >Lietuvos automobiliø keliø direkcija</option>
+			<option value="106"  >Lietuvos autoriø teisiø ir gretutiniø teisiø taryb</option>
+			<option value="16"  >Lietuvos bankas</option>
+			<option value="128"  >Lietuvos bioetikos komitetas</option>
+			<option value="119"  >Lietuvos darbo birþa prie Socialinës apsaugos ir darbo ministerijos</option>
+			<option value="213"  >Lietuvos geologijos tarnyba prie Aplinkos ministerijos</option>
+			<option value="18"  >Lietuvos gyventojø genocido ir rezistencijos tyrimø centras</option>
+			<option value="77"  >Lietuvos hidrometeorologijos tarnyba prie Aplinkos ministerijos</option>
+			<option value="101"  >Lietuvos kultûros ir meno taryba</option>
+			<option value="141"  >Lietuvos medicinos biblioteka</option>
+			<option value="164"  >Lietuvos metrologijos inspekcija</option>
+			<option value="20"  >Lietuvos mokslo taryba</option>
+			<option value="220"  >Lietuvos nacionalinë Martyno Maþvydo biblioteka</option>
+			<option value="109"  >Lietuvos nacionalinë UNESCO komisija</option>
+			<option value="24"  >Lietuvos radijo ir televizijos komisija</option>
+			<option value="51"  >Lietuvos Respublikos aplinkos ministerija</option>
+			<option value="78"  >Lietuvos Respublikos aplinkos ministerijos Alytaus regiono aplinkos apsaugos departamentas</option>
+			<option value="79"  >Lietuvos Respublikos aplinkos ministerijos Kauno regiono aplinkos apsaugos departamentas</option>
+			<option value="80"  >Lietuvos Respublikos aplinkos ministerijos Klaipëdos regiono aplinkos apsaugos departamentas</option>
+			<option value="81"  >Lietuvos Respublikos aplinkos ministerijos Marijampolës regiono aplinkos apsaugos departamentas</option>
+			<option value="82"  >Lietuvos Respublikos aplinkos ministerijos Panevëþio regiono aplinkos apsaugos departamentas</option>
+			<option value="83"  >Lietuvos Respublikos aplinkos ministerijos Ðiauliø regiono aplinkos apsaugos departamentas</option>
+			<option value="84"  >Lietuvos Respublikos aplinkos ministerijos Utenos regiono aplinkos apsaugos departamentas</option>
+			<option value="85"  >Lietuvos Respublikos aplinkos ministerijos Vilniaus regiono aplinkos apsaugos departamentas</option>
+			<option value="246"  >Lietuvos Respublikos energetikos ministerija</option>
+			<option value="52"  >Lietuvos Respublikos finansø ministerija</option>
+			<option value="42"  >Lietuvos Respublikos ginklø fondas prie Vidaus reikalø ministerijos</option>
+			<option value="211"  >Lietuvos Respublikos konstitucinis teismas</option>
+			<option value="53"  >Lietuvos Respublikos kraðto apsaugos ministerija</option>
+			<option value="54"  >Lietuvos Respublikos kultûros ministerija</option>
+			<option value="8"  >LIETUVOS RESPUBLIKOS PREZIDENTAS</option>
+			<option value="14"  >Lietuvos Respublikos Prezidento kanceliarija</option>
+			<option value="15"  >Lietuvos Respublikos Prezidentûra</option>
+			<option value="209"  >Lietuvos Respublikos prokuratûra </option>
+			<option value="9"  >LIETUVOS RESPUBLIKOS SEIMAS</option>
+			<option value="55"  >Lietuvos Respublikos socialinës apsaugos ir darbo ministerija</option>
+			<option value="56"  >Lietuvos Respublikos susisiekimo ministerija</option>
+			<option value="57"  >Lietuvos Respublikos sveikatos apsaugos ministerija</option>
+			<option value="58"  >Lietuvos Respublikos ðvietimo ir mokslo ministerija</option>
+			<option value="59"  >Lietuvos Respublikos teisingumo ministerija</option>
+			<option value="116"  >Lietuvos Respublikos triðalës tarybos sekretoriata</option>
+			<option value="60"  >Lietuvos Respublikos ûkio ministerija</option>
+			<option value="61"  >Lietuvos Respublikos uþsienio reikalø ministerija</option>
+			<option value="19"  >Lietuvos Respublikos valstybës kontrolë</option>
+			<option value="46"  >Lietuvos Respublikos valstybinë maisto ir veterinarijos tarnyba</option>
+			<option value="162"  >Lietuvos Respublikos valstybinis patentø biuras</option>
+			<option value="62"  >Lietuvos Respublikos vidaus reikalø ministerija</option>
+			<option value="21"  >Lietuvos Respublikos vyriausioji rinkimø komisija</option>
+			<option value="10"  >Lietuvos Respublikos Vyriausybës kanceliarija</option>
+			<option value="63"  >Lietuvos Respublikos þemës ûkio ministerija</option>
+			<option value="224"  >Lietuvos saugios laivybos administracija</option>
+			<option value="172"  >Lietuvos smulkaus ir vidutinio verslo plëtros agen</option>
+			<option value="44"  >Lietuvos statistikos departamentas</option>
+			<option value="137"  >Lietuvos sveikatos informacijos centras</option>
+			<option value="163"  >Lietuvos teismo ekspertizës centras</option>
+			<option value="228"  >Lietuvos vyriausiasis administracinis teismas </option>
+			<option value="41"  >Lietuvos vyriausiojo archyvaro tarnyba  </option>
+			<option value="219"  >Loðimø prieþiûros tarnyba prie Finansø ministerijos</option>
+			<option value="68"  >Marijampolës apskrities virðininko administracija</option>
+			<option value="94"  >Marijampolës teritorinë muitinë</option>
+			<option value="95"  >Maþeikiø teritorinë muitinë</option>
+			<option value="100"  >Meno kûrëjo ir meno kûrëjø organizacijos statuso s</option>
+			<option value="176"  >Migracijos departamentas prie Vidaus reikalø ministerijos</option>
+			<option value="129"  >Mineralinio vandens kokybës nustatymo komisija</option>
+			<option value="11"  >MINISTERIJOS</option>
+			<option value="93"  >Muitinës departamentas prie Finansø ministerijos</option>
+			<option value="104"  >Muziejø taryba</option>
+			<option value="188"  >Nacionalinë mokëjimo agentûra prie Þemës ûkio ministerijos</option>
+			<option value="48"  >Nacionalinë pasienio ir transporto tarnyba</option>
+			<option value="229"  >Nacionalinë teismø administracija </option>
+			<option value="230"  >Nacionalinë þemës tarnyba prie Þemës ûkio ministerijos</option>
+			<option value="216"  >Nacionalinis egzaminø centras</option>
+			<option value="133"  >Nacionalinis transplantacijos biuras prie Sveikatos apsaugos ministerijos</option>
+			<option value="150"  >Nacionalinis visuomenës sveikatos tyrimø centras</option>
+			<option value="107"  >Nacionaliniø kultûros ir meno premijø komisija</option>
+			<option value="43"  >Narkotikø, tabako ir alkoholio kontrolës departamentas</option>
+			<option value="113"  >Neágaliøjø reikalø departamentas prie Socialinës apsaugos ir darbo ministerijos</option>
+			<option value="115"  >Neágalumo ir darbingumo nustatymo tarnyba prie Socialinës apsaugos ir darbo ministerijos</option>
+			<option value="69"  >Panevëþio apskrities virðininko administracija</option>
+			<option value="126"  >Pasienio kontrolës punktø direkcija prie Susisiekimo ministerijos</option>
+			<option value="177"  >Policijos departamentas prie Vidaus reikalø ministerijos</option>
+			<option value="183"  >Prieðgaisrinës apsaugos ir gelbëjimo departamentas prie Vidaus reikalø ministerijos</option>
+			<option value="25"  >Privatizavimo komisija</option>
+			<option value="145"  >Radiacinës saugos centras</option>
+			<option value="147"  >Respublikinis mitybos centras</option>
+			<option value="26"  >Ryðiø reguliavimo tarnyba</option>
+			<option value="27"  >Seimo kontrolieriø ástaiga</option>
+			<option value="210"  >Ðeðkinës poliklinika</option>
+			<option value="70"  >Ðiauliø apskrities virðininko administracija</option>
+			<option value="140"  >Slaugos darbuotojø tobulinimosi ir specializacijos</option>
+			<option value="114"  >Socialinës globos ástaigø administravimo tarnyba prie Socialinës apsaugos ir darbo ministerijos</option>
+			<option value="112"  >Socialiniø paslaugø prieþiûros departamentas prie Socialinës apsaugos ir darbo ministerijos</option>
+			<option value="28"  >Spaudos, radijo ir televizijos rëmimo fondas</option>
+			<option value="29"  >Specialiøjø tyrimø tarnyba</option>
+			<option value="151"  >Studijø kokybës vertinimo centras</option>
+			<option value="142"  >Sveikatos apsaugos projektavimo koordinavimo biura</option>
+			<option value="187"  >Sveikatos prieþiûros tarnyba prie Vidaus reikalø ministerijos</option>
+			<option value="154"  >Ðvietimo informaciniø technologijø centras</option>
+			<option value="152"  >Tarptautiniø mokslo ir technologijø plëtros progra</option>
+			<option value="71"  >Tauragës apskrities virðininko administracija</option>
+			<option value="96"  >Tauragës teritorinë muitinë</option>
+			<option value="105"  >Teatrø ir koncertiniø ástaigø taryba</option>
+			<option value="118"  >Techninës pagalbos neágaliesiems centras prie Socialinës apsaugos ir darbo ministerijos</option>
+			<option value="158"  >Teisës institutas</option>
+			<option value="160"  >Teisinës informacijos centras</option>
+			<option value="72"  >Telðiø apskrities virðininko administracija</option>
+			<option value="222"  >Transporto investicijø direkcija </option>
+			<option value="153"  >Ugdymo plëtotës centras</option>
+			<option value="73"  >Utenos apskrities virðininko administracija</option>
+			<option value="97"  >Utenos teritorinë muitinë</option>
+			<option value="148"  >Uþkreèiamøjø ligø profilaktikos ir kontrolës centr</option>
+			<option value="178"  >Vadovybës apsaugos departamentas prie Vidaus reikalø ministerijos</option>
+			<option value="30"  >Vaiko teisiø apsaugos kontrolieriaus ástaiga</option>
+			<option value="221"  >Vaikø iðlaikymo fondo administracija prie Socialinës apsaugos ir darbo ministerijos</option>
+			<option value="214"  >Valst. teritorijø planavimo ir statybos inspekcija</option>
+			<option value="92"  >Valstybës dokumentø technologinës apsaugos tarnyba</option>
+			<option value="166"  >Valstybës garantuojamos teisinës pagalbos tarnybos</option>
+			<option value="32"  >Valstybës saugumo departamentas</option>
+			<option value="184"  >Valstybës sienos apsaugos tarnyba</option>
+			<option value="185"  >Valstybës tarnybos departamentas</option>
+			<option value="120"  >Valstybës vaiko teisiø apsaugos ir ávaikinimo tarn</option>
+			<option value="138"  >Valstybinë akreditavimo sveikatos prieþiûros veiklai tarnyba prie Sveikatos apsaugos ministerijos</option>
+			<option value="38"  >Valstybinë atominës energetikos saugos inspekcija</option>
+			<option value="191"  >Valstybinë augalininkystës tarnyba prie Þemës ûkio ministerijos</option>
+			<option value="121"  >Valstybinë darbo inspekcija</option>
+			<option value="39"  >Valstybinë duomenø apsaugos inspekcija</option>
+			<option value="171"  >Valstybinë energetikos inspekcija prie Energetikos ministerijos</option>
+			<option value="124"  >Valstybinë geleþinkelio inspekcija prie Susisiekimo ministerijos</option>
+			<option value="190"  >Valstybinë gyvuliø veislininkystës prieþiûros tarnyba prie Þemës ûkio ministerijos</option>
+			<option value="33"  >Valstybinë kainø ir energetikos kontrolës komisija</option>
+			<option value="122"  >Valstybinë keliø transporto inspekcija</option>
+			<option value="197"  >Valstybinë kiauliø veislininkystës stotis</option>
+			<option value="99"  >Valstybinë lietuviø kalbos komisija</option>
+			<option value="143"  >Valstybinë ligoniø kasa prie Sveikatos apsaugos ministerijos</option>
+			<option value="76"  >Valstybinë metrologijos tarnyba</option>
+			<option value="217"  >Valstybinë miðkø tarnyba </option>
+			<option value="88"  >Valstybinë mokesèiø inspekcija prie Finansø ministerijos</option>
+			<option value="169"  >Valstybinë ne maisto produktø inspekcija prie Ûkio ministerijos</option>
+			<option value="49"  >Valstybinë pasienio ir transporto tarnyba</option>
+			<option value="87"  >Valstybinë saugomø teritorijø tarnyba</option>
+			<option value="40"  >Valstybinë tabako ir alkoholio kontrolës tarnyba</option>
+			<option value="136"  >Valstybinë teismo psichiatrijos tarnyba prie Sveikatos apsaugos ministerijos</option>
+			<option value="139"  >Valstybinë vaistø kontrolës tarnyba</option>
+			<option value="155"  >Valstybinë vartotojø teisiø apsaugos tarnyba</option>
+			<option value="47"  >Valstybinë veterinarijos preparatø inspekcija</option>
+			<option value="125"  >Valstybinë vidaus vandenø laivybos inspekcija</option>
+			<option value="111"  >Valstybinio socialinio draudimo fondo valdyba prie Socialinës apsaugos ir darbo ministerijos</option>
+			<option value="134"  >Valstybinis patologijos centras</option>
+			<option value="135"  >Valstybinis psichikos sveikatos centras</option>
+			<option value="231"  >Valstybinis studijø fondas </option>
+			<option value="170"  >Valstybinis turizmo departamentas prie Ûkio ministerijos</option>
+			<option value="34"  >Vertybiniø popieriø komisija</option>
+			<option value="174"  >VÁ "Lietuvos naftos produktø agentûra"</option>
+			<option value="233"  >VÁ „Infostruktûra“ </option>
+			<option value="212"  >VÁ „Valstybës turto fondas“ </option>
+			<option value="173"  >VÁ Energetikos agentûra</option>
+			<option value="227"  >VÁ GIS centras</option>
+			<option value="225"  >VÁ Klaipëdos valstybinio jûrø uosto direkcija</option>
+			<option value="198"  >VÁ Lietuvos þemës ûkio ir maisto produktø rinkos r</option>
+			<option value="175"  >VÁ Radioaktyviøjø atliekø tvarkymo agentûra</option>
+			<option value="165"  >VÁ Registrø centras</option>
+			<option value="199"  >VÁ Þemës ûkio informacijos ir kaimo verslo centras</option>
+			<option value="232"  >Vieðojo saugumo tarnyba prie Vidaus reikalø ministerijos</option>
+			<option value="50"  >Vieðøjø pirkimø tarnyba</option>
+			<option value="74"  >Vilniaus apskrities virðininko administracija</option>
+			<option value="89"  >Vilniaus miesto valstybinë mokesèiø inspekcija</option>
+			<option value="248"  >Vilniaus visuomenës sveikatos centras</option>
+			<option value="149"  >Visuomenës sveikatos ugdymo centras</option>
+			<option value="205"  >VðÁ „Investuok Lietuvoje“ </option>
+			<option value="204"  >VðÁ „Lietuvos verslo paramos agentûra“ </option>
+			<option value="206"  >VðÁ „Versli Lietuva“ </option>
+			<option value="238"  >VðÁ Alytaus S.Kudirkos ligoninë </option>
+			<option value="202"  >VÐÁ Centrinë projektø valdymo agentûra</option>
+			<option value="237"  >VðÁ Elektrënø ligoninë </option>
+			<option value="235"  >VðÁ Kauno ligoninë </option>
+			<option value="203"  >VÐÁ Plaèiajuostis internetas</option>
+			<option value="243"  >VðÁ Respublikinë Panevëþio ligoninë </option>
+			<option value="242"  >VðÁ Respublikinë Ðiauliø ligoninë </option>
+			<option value="236"  >VðÁ Respublikinë Vilniaus universitetinë ligoninë </option>
+			<option value="241"  >VðÁ Tauragës ligoninë </option>
+			<option value="240"  >Vðá Telðiø ligoninë </option>
+			<option value="239"  >VðÁ Utenos ligoninë </option>
+			<option value="208"  >VðÁ Vilniaus universiteto ligoninës Santariðkiø klinikos</option>
+			<option value="234"  >VðÁ VUL Þalgirio klinika</option>
+			<option value="35"  >Vyriausioji rinkimø komisija</option>
+			<option value="23"  >Vyriausioji tarnybinës etikos komisija</option>
+			<option value="192"  >Þemëtvarkos ir teisës departamentas prie Þemës ûkio ministerijos</option>
+			<option value="193"  >Þuvininkystës tarnyba prie Þemës ûkio ministerijos</option>
+		  </select>
+		</td>
+	</tr>
+	<tr>
+		<td class="boxtext">Reikðminiai þodþiai</td>
+		<td><input name="Zodziai" id="Zodziai" type="text" size="50" maxlength="250" value="" /></td>
+	</tr>
+	<tr >
+		<td class="boxtext">Rinkmenos rûðis</td>
+		<td>
+		  <select id="Rusis_ID" name="Rusis">
+			
+			<option value="0"  ></option>
+			<option value="6"  >Kita</option>
+			<option value="2"  >Valstybës informacinë sistema</option>
+			<option value="4"  >Valstybës registras</option>
+			<option value="3"  >Þinybinis registras</option>
+		  </select>
+		</td>
+	</tr>
+	<tr >
+		<td class="boxtext">Duomenø formatas</td>
+		<td>
+		  <select id="Formatas_ID" name="Formatas">
+			
+			<option value="0"  ></option>
+			<option value="5"  >CSV formatas</option>
+			<option value="7"  >DOC/DOCX formatas</option>
+			<option value="12"  >ESRI Shapefile formatas</option>
+			<option value="13"  >GML formatas</option>
+			<option value="11"  >HTML formatas</option>
+			<option value="10"  >JPG/PNG/GIF formatas</option>
+			<option value="8"  >Kita</option>
+			<option value="9"  >PDF formatas</option>
+			<option value="14"  >TIFF formatas</option>
+			<option value="15"  >TXT formatas</option>
+			<option value="6"  >XLS formatas</option>
+			<option value="4"  >XML formatas</option>
+		  </select>
+		</td>
+	</tr>
+	<tr>
+		<td class="boxtext" >Publikavimo data nuo:</td>
+		<td class="text">
+			<input name="DataNuo" id="DataNuo" type="text" value="" size="10" maxlength="10">
+			<a href="javascript: void(0);"
+			   onmouseover="if (timeoutId) clearTimeout(timeoutId);window.status='Show Calendar';return true;"
+			   onmouseout="if (timeoutDelay) calendarTimeout();window.status='';"
+			   onclick="g_Calendar.show(event,'frm.DataNuo', true, 'yyyy-mm-dd'); return false;">
+			   <img src="/widgets/calendar/images/calendar.gif"
+					name="imgCalendar" width="34" height="21" align="top" border="0" alt=""></a></td>
+	</tr>
+	<tr>                
+		<td class="boxtext" width="10%">Publikavimo data iki:</td>
+		<td class="text">
+			<input name="DataIki" id="DataIki" type="text" value="" size="10" maxlength="10">
+			<a href="javascript: void(0);"
+			   onmouseover="if (timeoutId) clearTimeout(timeoutId);window.status='Show Calendar';return true;"
+			   onmouseout="if (timeoutDelay) calendarTimeout();window.status='';"
+			   onclick="g_Calendar.show(event,'frm.DataIki', true, 'yyyy-mm-dd'); return false;">
+			   <img src="/widgets/calendar/images/calendar.gif"
+					name="imgCalendar" width="34" height="21" align="top" border="0" alt=""></a></td>
+	</tr>
+	<tr>
+		<td class="boxtext" >Duomenø patikimumas</td>
+		<td><select name="Patikimumas" id="Patikimumas" type="text">
+			<option value=""></option>
+			<option value="N" >Ástaiga neprisiima atsakomybës uþ rinkmenos duomenø teisingumà</option>
+			<option value="T" >Ástaiga prisiima atsakomybæ</option>
+		</select>
+		</td>
+	</tr>
+	<tr>
+		<td class="boxtext" >Duomenø iðsamumas</td>
+		<td><select name="Issamumas" id="Issamumas" type="text">
+			<option value=""></option>
+			<option value="N" >Duomenys dar kaupiami</option>
+			<option value="T" >Visi duomenys sukaupti</option>
+		</select>
+		</td>
+	</tr>
+	<tr>
+		<td class="boxtext" >Sukaupta duomenu (%) nuo:</td>
+		<td><input name="IssamumasNuo" id="IssamumasNuo" type="text" size="3" maxlength="3" value="" /></td>
+	</tr>
+	<tr>
+		<td class="boxtext" >Sukaupta duomenu (%) iki:</td>
+		<td><input name="IssamumasIki" id="IssamumasIki" type="text" size="3" maxlength="3" value="" /></td>
+	</tr>
+	<tr>
+		<td class="boxtext">Ieðkoti tik jau pateiktuose rezultatuose</td>
+		<td><input type="checkbox" id="ID_list" name="ID_list" value="9, 14, 34, 35, 37, 38, 40, 41, 45, 64, 65, 66, 69, 70, 72, 73, 74, 77, 79, 81, 83, 84, 87, 89, 90, 91, 93, 94, 95, 100, 103, 104, 110, 111, 112, 118, 119, 127, 131, 140, 142, 143, 145, 147, 148, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 164, 171, 172, 173, 176, 177, 190, 191, 193, 194, 195, 196, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 219, 221, 222, 223, 224, 225, 226, 227, 228, 239, 246, 250, 264, 265, 273, 275, 276, 277, 278, 279, 282, 283, 285, 286, 287, 288, 291, 292, 293, 294, 295, 296, 299, 300, 301, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 331, 332, 333, 336, 338, 339, 340, 345, 346, 347, 348, 350, 353, 355, 356, 357, 358, 359, 360, 361, 362, 363, 364, 365, 366, 367, 368, 369, 370, 371, 372, 374, 375, 376, 377, 378, 379, 380, 381, 382, 383, 384, 385, 386, 387, 388, 389, 390, 391, 392, 393, 394, 395, 396, 397, 398, 402, 405, 406, 407, 408, 409, 410, 424, 433, 434, 435, 436, 437, 439, 441, 452, 455, 458, 459, 460, 461, 463, 465, 466, 467, 468, 469, 470, 471, 472, 474, 475, 476, 477, 478, 479, 480, 481, 489, 490, 491, 498, 499, 500, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514, 516, 517, 518, 519, 520, " ></td>
+	</tr>
+	</table>
+</div>
+<hr noshade size="2">
+
+<table width="100%" border="0">
+<tr>
+    <th>Eil. Nr.</th>
+    <th><a href="/index.php?vars=/public/public/search/0/0-asc" >Kodas</a></th>
+	<th><a href="/index.php?vars=/public/public/search/0/1-asc" >Pavadinimas</a></th>
+	<th><a href="/index.php?vars=/public/public/search/0/2-asc" >Rinkmenos apibûdinimas</a></th>
+	<th><a href="/index.php?vars=/public/public/search/0/3-asc" >Kategorija (informacijos sritis)</a></th>
+	<th><a href="/index.php?vars=/public/public/search/0/4-asc" >Tvarkytojas</a></th>
+	<th width = "10"><a href="/index.php?vars=/public/public/search/0/5-asc" >Internetinis adresas</a></th>
+
+	<th width="1%">&nbsp;</th>
+</tr>
+
+<tr>
+    <td class="bglight">1</td>
+    <td class="bglight">5498</td>
+	<td class="bglight"><a href="/index.php?vars=/public/public/print/9/">Nekilnojamo turto registras</a></td>
+	<td class="bglight">Pateikiama informacija apie nekilnojamuosius daiktus, daiktines teises á juos; juridiniai faktai, suvarþymai; grafinë medþiaga.</td>
+	<td class="bglight">Pastatai ir statiniai<br><br>Nekilnojamasis turtas<br><br></td>
+	<td class="bglight">VÁ Registrø centras</td>
+	<td class="bglight"><a href="http://www.kada.lt/ntr/index.php" target="_blank">http://www.kada.lt/ntr/in&#8203;dex.php&#8203;</a></td>
+	<td class="bglight" style="white-space: nowrap; padding: 0 5px;">
+		<a href="/index.php?vars=/public/public/print/9/"><img name="ezuser-red" border="0" src="/images/print.gif" width="16" height="16" align="top" title="Detali perþiûra" alt="Spausdinti" /></a>
+		
+		<a href="/index.php?vars=/uzklausimai/uzklausimai/new/1/9/"><img border="0" src="/images/mail_red.gif" width="16" height="16" align="top" title="Siøsti praneðimà rinkmenos tvarkytojui" alt="Siøsti praneðimà rinkmenos tvarkytojui" /></a>
+	</td>
+</tr>
+<tr>
+    <td class="bgdark">2</td>
+    <td class="bgdark">5503</td>
+	<td class="bgdark"><a href="/index.php?vars=/public/public/print/14/">Registrø ir valstybës informaciniø sistemø registras</a></td>
+	<td class="bgdark">Pateikiama aktuali informacija apie ástatymais nustatytø valstybës ir þinybiniø registrø steigimà, kûrimo eigà bei funkcionavimà, registruose kaupiamus duomenis, registrus tvarkanèias ástaigas.</td>
+	<td class="bgdark">Valstybës valdymas, vieðasis administravimas<br><br></td>
+	<td class="bgdark">Informacinës visuomenës plëtros komitetas prie Susisiekimo ministerijos</td>
+	<td class="bgdark"><a href="http://www.registrai.lt/" target="_blank">http://www.registrai.lt/&#8203;</a></td>
+	<td class="bgdark" style="white-space: nowrap; padding: 0 5px;">
+		<a href="/index.php?vars=/public/public/print/14/"><img name="ezuser-red" border="0" src="/images/print.gif" width="16" height="16" align="top" title="Detali perþiûra" alt="Spausdinti" /></a>
+		
+		<a href="/index.php?vars=/uzklausimai/uzklausimai/new/1/14/"><img border="0" src="/images/mail_red.gif" width="16" height="16" align="top" title="Siøsti praneðimà rinkmenos tvarkytojui" alt="Siøsti praneðimà rinkmenos tvarkytojui" /></a>
+	</td>
+</tr>
+<tr>
+    <td class="bglight">3</td>
+    <td class="bglight">5523</td>
+	<td class="bglight"><a href="/index.php?vars=/public/public/print/34/">Informacijos rinkmenø sàraðas</a></td>
+	<td class="bglight">Informacija apie Lietuvos institucijø ir ástaigø tvarkomas informacijos rinkmenas.</td>
+	<td class="bglight">Telekomunikacijos ir ryðiai<br><br></td>
+	<td class="bglight">Informacinës visuomenës plëtros komitetas prie Susisiekimo ministerijos</td>
+	<td class="bglight"><a href="http://opendata.gov.lt/index.php?vars=/public/public/search" target="_blank">http://opendata.gov.lt/in&#8203;dex.php?vars=/public/publ&#8203;ic/search&#8203;</a></td>
+	<td class="bglight" style="white-space: nowrap; padding: 0 5px;">
+		<a href="/index.php?vars=/public/public/print/34/"><img name="ezuser-red" border="0" src="/images/print.gif" width="16" height="16" align="top" title="Detali perþiûra" alt="Spausdinti" /></a>
+		
+		<a href="/index.php?vars=/uzklausimai/uzklausimai/new/1/34/"><img border="0" src="/images/mail_red.gif" width="16" height="16" align="top" title="Siøsti praneðimà rinkmenos tvarkytojui" alt="Siøsti praneðimà rinkmenos tvarkytojui" /></a>
+	</td>
+</tr>
+<tr>
+    <td class="bgdark">4</td>
+    <td class="bgdark">5524</td>
+	<td class="bgdark"><a href="/index.php?vars=/public/public/print/35/">Svetainiø atitikimo reikalavimams tyrimai</a></td>
+	<td class="bgdark">Pateikiami 2009-2012 m. tyrimo rezultatai, tyrimø ataskaitos. </td>
+	<td class="bgdark">Telekomunikacijos ir ryðiai<br><br></td>
+	<td class="bgdark">Informacinës visuomenës plëtros komitetas prie Susisiekimo ministerijos</td>
+	<td class="bgdark"><a href="http://www.ivpk.lt/lt/lthm/veikla/veiklos-sritys/bendrieji-reikalavimai" target="_blank">http://www.ivpk.lt/lt/lth&#8203;m/veikla/veiklos-sritys/b&#8203;endrieji-reikalavimai&#8203;</a></td>
+	<td class="bgdark" style="white-space: nowrap; padding: 0 5px;">
+		<a href="/index.php?vars=/public/public/print/35/"><img name="ezuser-red" border="0" src="/images/print.gif" width="16" height="16" align="top" title="Detali perþiûra" alt="Spausdinti" /></a>
+		
+		<a href="/index.php?vars=/uzklausimai/uzklausimai/new/1/35/"><img border="0" src="/images/mail_red.gif" width="16" height="16" align="top" title="Siøsti praneðimà rinkmenos tvarkytojui" alt="Siøsti praneðimà rinkmenos tvarkytojui" /></a>
+	</td>
+</tr>
+<tr>
+    <td class="bglight">5</td>
+    <td class="bglight">5526</td>
+	<td class="bglight"><a href="/index.php?vars=/public/public/print/37/">Faktiniai orai</a></td>
+	<td class="bglight">Pateikiama informacija apie 8 Lietuvos miestø temperatûrà, vëjo kryptá, atmosferos slëgá jûros lygyje, debesuotumà, vidutiná (maksimalø) vëjo greitá ir apie reiðkinius</td>
+	<td class="bglight">Aplinka<br><br></td>
+	<td class="bglight">Lietuvos hidrometeorologijos tarnyba prie Aplinkos ministerijos</td>
+	<td class="bglight"><a href="http://www.meteo.lt/faktiniai_orai.php" target="_blank">http://www.meteo.lt/fakti&#8203;niai_orai.php&#8203;</a></td>
+	<td class="bglight" style="white-space: nowrap; padding: 0 5px;">
+		<a href="/index.php?vars=/public/public/print/37/"><img name="ezuser-red" border="0" src="/images/print.gif" width="16" height="16" align="top" title="Detali perþiûra" alt="Spausdinti" /></a>
+		
+		<a href="/index.php?vars=/uzklausimai/uzklausimai/new/1/37/"><img border="0" src="/images/mail_red.gif" width="16" height="16" align="top" title="Siøsti praneðimà rinkmenos tvarkytojui" alt="Siøsti praneðimà rinkmenos tvarkytojui" /></a>
+	</td>
+</tr>
+<tr>
+    <td class="bgdark">6</td>
+    <td class="bgdark">5527</td>
+	<td class="bgdark"><a href="/index.php?vars=/public/public/print/38/">Ðvietimo ir mokslo registrø apskaitos duomenys</a></td>
+	<td class="bgdark">Sàraðe pateikiama informacija apie veikianèius ðvietimo ir mokslo srities registrus.</td>
+	<td class="bgdark">Iðsilavinimo paþymëjimai<br><br>Kvalifikacijos këlimas<br><br>Mokymo licencijos<br><br>Profesinis mokymas<br><br>Studijø ir mokymo programos<br><br>Ðvietimo, mokslo ir studijø ástaigos<br><br>Moksleiviai<br><br>Mokytojai<br><br>Studentai<br><br></td>
+	<td class="bgdark">Ðvietimo informaciniø technologijø centras</td>
+	<td class="bgdark"><a href="http://www.krisin.smm.lt/krisin/registrai/registrai.htm" target="_blank">http://www.krisin.smm.lt/&#8203;krisin/registrai/registra&#8203;i.htm&#8203;</a></td>
+	<td class="bgdark" style="white-space: nowrap; padding: 0 5px;">
+		<a href="/index.php?vars=/public/public/print/38/"><img name="ezuser-red" border="0" src="/images/print.gif" width="16" height="16" align="top" title="Detali perþiûra" alt="Spausdinti" /></a>
+		
+		<a href="/index.php?vars=/uzklausimai/uzklausimai/new/1/38/"><img border="0" src="/images/mail_red.gif" width="16" height="16" align="top" title="Siøsti praneðimà rinkmenos tvarkytojui" alt="Siøsti praneðimà rinkmenos tvarkytojui" /></a>
+	</td>
+</tr>
+<tr>
+    <td class="bglight">7</td>
+    <td class="bglight">5529</td>
+	<td class="bglight"><a href="/index.php?vars=/public/public/print/40/">Laisvø darbo vietø duomenys</a></td>
+	<td class="bglight">Lietuvos darbo birþos informacinës sistemos duomenø bazë, kurioje kaupiami registruotø laisvø darbo vietø duomenys.</td>
+	<td class="bglight">Laisvos darbo vietos<br><br></td>
+	<td class="bglight">Lietuvos darbo birþa prie Socialinës apsaugos ir darbo ministerijos</td>
+	<td class="bglight"><a href="http://www.ldb.lt/LDBPortal/Pages/ServicesForEmployees.aspx" target="_blank">http://www.ldb.lt/LDBPort&#8203;al/Pages/ServicesForEmplo&#8203;yees.aspx&#8203;</a></td>
+	<td class="bglight" style="white-space: nowrap; padding: 0 5px;">
+		<a href="/index.php?vars=/public/public/print/40/"><img name="ezuser-red" border="0" src="/images/print.gif" width="16" height="16" align="top" title="Detali perþiûra" alt="Spausdinti" /></a>
+		
+		<a href="/index.php?vars=/uzklausimai/uzklausimai/new/1/40/"><img border="0" src="/images/mail_red.gif" width="16" height="16" align="top" title="Siøsti praneðimà rinkmenos tvarkytojui" alt="Siøsti praneðimà rinkmenos tvarkytojui" /></a>
+	</td>
+</tr>
+<tr>
+    <td class="bgdark">8</td>
+    <td class="bgdark">5530</td>
+	<td class="bgdark"><a href="/index.php?vars=/public/public/print/41/">Hidrologinë informacija</a></td>
+	<td class="bgdark">Pateikiama informacija apie Lietuvos vandens telkiniø vandens lygá, vandens temperatûrà, o kai kur ir apie oro temperatûrà.</td>
+	<td class="bgdark">Aplinka<br><br></td>
+	<td class="bgdark">Lietuvos hidrometeorologijos tarnyba prie Aplinkos ministerijos</td>
+	<td class="bgdark"><a href="http://www.meteo.lt/hidro_informacija.php" target="_blank">http://www.meteo.lt/hidro&#8203;_informacija.php&#8203;</a></td>
+	<td class="bgdark" style="white-space: nowrap; padding: 0 5px;">
+		<a href="/index.php?vars=/public/public/print/41/"><img name="ezuser-red" border="0" src="/images/print.gif" width="16" height="16" align="top" title="Detali perþiûra" alt="Spausdinti" /></a>
+		
+		<a href="/index.php?vars=/uzklausimai/uzklausimai/new/1/41/"><img border="0" src="/images/mail_red.gif" width="16" height="16" align="top" title="Siøsti praneðimà rinkmenos tvarkytojui" alt="Siøsti praneðimà rinkmenos tvarkytojui" /></a>
+	</td>
+</tr>
+<tr>
+    <td class="bglight">9</td>
+    <td class="bglight">5534</td>
+	<td class="bglight"><a href="/index.php?vars=/public/public/print/45/">Lietuvoje veikianèiø komerciniø bankø ir uþsienio bankø skyriø balansinë ataskaita</a></td>
+	<td class="bglight">Lietuvoje veikianèiø komerciniø bankø ir uþsienio bankø skyriø balansinë ataskaita </td>
+	<td class="bglight">Statistika<br><br></td>
+	<td class="bglight">Lietuvos bankas</td>
+	<td class="bglight"><a href="http://www.lb.lt/stat_pub/statbrowser.aspx?group=8012" target="_blank">http://www.lb.lt/stat_pub&#8203;/statbrowser.aspx?group=8&#8203;012&#8203;</a></td>
+	<td class="bglight" style="white-space: nowrap; padding: 0 5px;">
+		<a href="/index.php?vars=/public/public/print/45/"><img name="ezuser-red" border="0" src="/images/print.gif" width="16" height="16" align="top" title="Detali perþiûra" alt="Spausdinti" /></a>
+		
+		<a href="/index.php?vars=/uzklausimai/uzklausimai/new/1/45/"><img border="0" src="/images/mail_red.gif" width="16" height="16" align="top" title="Siøsti praneðimà rinkmenos tvarkytojui" alt="Siøsti praneðimà rinkmenos tvarkytojui" /></a>
+	</td>
+</tr>
+<tr>
+    <td class="bgdark">10</td>
+    <td class="bgdark">5553</td>
+	<td class="bgdark"><a href="/index.php?vars=/public/public/print/64/">Galiojanèiø medicinos normø sàraðas</a></td>
+	<td class="bgdark">Sàraðà sudaro medicinos normos þymuo, pavadinimas ir Sveikatos apsaugos
+ministro ásakymo, kuriuo medicinos norma patvirtinta, data ir numeris,
+“Valstybës þiniø”, kuriose medicinos norma paskelbta, numeris.</td>
+	<td class="bgdark">Sveikatos apsauga<br><br></td>
+	<td class="bgdark">Valstybinë akreditavimo sveikatos prieþiûros veiklai tarnyba prie Sveikatos apsaugos ministerijos</td>
+	<td class="bgdark"><a href="http://www.vaspvt.gov.lt/node/61" target="_blank">http://www.vaspvt.gov.lt/&#8203;node/61&#8203;</a></td>
+	<td class="bgdark" style="white-space: nowrap; padding: 0 5px;">
+		<a href="/index.php?vars=/public/public/print/64/"><img name="ezuser-red" border="0" src="/images/print.gif" width="16" height="16" align="top" title="Detali perþiûra" alt="Spausdinti" /></a>
+		
+		<a href="/index.php?vars=/uzklausimai/uzklausimai/new/1/64/"><img border="0" src="/images/mail_red.gif" width="16" height="16" align="top" title="Siøsti praneðimà rinkmenos tvarkytojui" alt="Siøsti praneðimà rinkmenos tvarkytojui" /></a>
+	</td>
+</tr>
+<tr>
+    <td class="bglight">11</td>
+    <td class="bglight">5554</td>
+	<td class="bglight"><a href="/index.php?vars=/public/public/print/65/">Gaisrø ir gelbëjimo darbø statistinë analizë</a></td>
+	<td class="bglight">Pateikiama statistinë informacija apie kilusius gaisrus ir atliktus gelbëjimo darbus; palyginamieji statistiniai duomenys lentelëse; grafikai</td>
+	<td class="bglight">Teisësauga ir teisëtvarka<br><br></td>
+	<td class="bglight">Prieðgaisrinës apsaugos ir gelbëjimo departamentas prie Vidaus reikalø ministerijos</td>
+	<td class="bglight"><a href="http://www.vpgt.lt/index.php?1593913482" target="_blank">http://www.vpgt.lt/index.&#8203;php?1593913482&#8203;</a></td>
+	<td class="bglight" style="white-space: nowrap; padding: 0 5px;">
+		<a href="/index.php?vars=/public/public/print/65/"><img name="ezuser-red" border="0" src="/images/print.gif" width="16" height="16" align="top" title="Detali perþiûra" alt="Spausdinti" /></a>
+		
+		<a href="/index.php?vars=/uzklausimai/uzklausimai/new/1/65/"><img border="0" src="/images/mail_red.gif" width="16" height="16" align="top" title="Siøsti praneðimà rinkmenos tvarkytojui" alt="Siøsti praneðimà rinkmenos tvarkytojui" /></a>
+	</td>
+</tr>
+<tr>
+    <td class="bgdark">12</td>
+    <td class="bgdark">5555</td>
+	<td class="bgdark"><a href="/index.php?vars=/public/public/print/66/">Auditoriø sàraðas</a></td>
+	<td class="bgdark">Pateikiama informacija apie asmenis, kuriems suteikta auditoriaus kvalifikacija energijos vartojimo auditui atlikti</td>
+	<td class="bgdark">Prekyba ir paslaugos<br><br></td>
+	<td class="bgdark">VÁ Energetikos agentûra</td>
+	<td class="bgdark"><a href="http://www.ena.lt/pdfai/Auditorius_duombaze_internete.pdf" target="_blank">http://www.ena.lt/pdfai/A&#8203;uditorius_duombaze_intern&#8203;ete.pdf&#8203;</a></td>
+	<td class="bgdark" style="white-space: nowrap; padding: 0 5px;">
+		<a href="/index.php?vars=/public/public/print/66/"><img name="ezuser-red" border="0" src="/images/print.gif" width="16" height="16" align="top" title="Detali perþiûra" alt="Spausdinti" /></a>
+		
+		<a href="/index.php?vars=/uzklausimai/uzklausimai/new/1/66/"><img border="0" src="/images/mail_red.gif" width="16" height="16" align="top" title="Siøsti praneðimà rinkmenos tvarkytojui" alt="Siøsti praneðimà rinkmenos tvarkytojui" /></a>
+	</td>
+</tr>
+<tr>
+    <td class="bglight">13</td>
+    <td class="bglight">5558</td>
+	<td class="bglight"><a href="/index.php?vars=/public/public/print/69/">Lietuvos kaimo plëtros 2007-2013 metø programos statistikos barometras</a></td>
+	<td class="bglight">Lietuvos kaimo plëtros 2007-2013 m. programos ágyvendinimo statistinë informacija apskrièiø lygmeniu</td>
+	<td class="bglight">Þemës ûkio investicijos<br><br>Augalininkystë<br><br>Gyvulininkystë<br><br>Þemës ûkio ir kaimo verslas<br><br></td>
+	<td class="bglight">Nacionalinë mokëjimo agentûra prie Þemës ûkio ministerijos</td>
+	<td class="bglight"><a href="http://www.paramakaimui.lt/component/statistika/" target="_blank">http://www.paramakaimui.l&#8203;t/component/statistika/&#8203;</a></td>
+	<td class="bglight" style="white-space: nowrap; padding: 0 5px;">
+		<a href="/index.php?vars=/public/public/print/69/"><img name="ezuser-red" border="0" src="/images/print.gif" width="16" height="16" align="top" title="Detali perþiûra" alt="Spausdinti" /></a>
+		
+		<a href="/index.php?vars=/uzklausimai/uzklausimai/new/1/69/"><img border="0" src="/images/mail_red.gif" width="16" height="16" align="top" title="Siøsti praneðimà rinkmenos tvarkytojui" alt="Siøsti praneðimà rinkmenos tvarkytojui" /></a>
+	</td>
+</tr>
+<tr>
+    <td class="bgdark">14</td>
+    <td class="bgdark">5559</td>
+	<td class="bgdark"><a href="/index.php?vars=/public/public/print/70/">Fondø/ apyraðø/ apsk. vnt. ir dokumentø apraðai</a></td>
+	<td class="bgdark">Informacija apie valstybës archyvuose ir uþsienio lietuviø archyvuose saugomus dokumentus</td>
+	<td class="bgdark">Valdþios institucijos<br><br></td>
+	<td class="bgdark">Lietuvos vyriausiojo archyvaro tarnyba  </td>
+	<td class="bgdark"><a href="http://eais-pub.archyvai.lt/eais/faces/pages/forms/search/F3001.jspx" target="_blank">http://eais-pub.archyvai.&#8203;lt/eais/faces/pages/forms&#8203;/search/F3001.jspx&#8203;</a></td>
+	<td class="bgdark" style="white-space: nowrap; padding: 0 5px;">
+		<a href="/index.php?vars=/public/public/print/70/"><img name="ezuser-red" border="0" src="/images/print.gif" width="16" height="16" align="top" title="Detali perþiûra" alt="Spausdinti" /></a>
+		
+		<a href="/index.php?vars=/uzklausimai/uzklausimai/new/1/70/"><img border="0" src="/images/mail_red.gif" width="16" height="16" align="top" title="Siøsti praneðimà rinkmenos tvarkytojui" alt="Siøsti praneðimà rinkmenos tvarkytojui" /></a>
+	</td>
+</tr>
+<tr>
+    <td class="bglight">15</td>
+    <td class="bglight">5561</td>
+	<td class="bglight"><a href="/index.php?vars=/public/public/print/72/">Iðduotø licencijø sàraðas</a></td>
+	<td class="bglight">Administracinë paslauga teikiama fiziniams ir juridiniams asmenims, siekiantiems ásigyti licencijas teikti dokumentø tvarkymo ir (ar) saugojimo paslaugas.</td>
+	<td class="bglight">Juridiniai asmenys<br><br>Gyventojai<br><br></td>
+	<td class="bglight">Lietuvos vyriausiojo archyvaro tarnyba  </td>
+	<td class="bglight"><a href="http://www.archyvai.lt/lt/paslaugos_53/isduotos-licencijos.html" target="_blank">http://www.archyvai.lt/lt&#8203;/paslaugos_53/isduotos-li&#8203;cencijos.html&#8203;</a></td>
+	<td class="bglight" style="white-space: nowrap; padding: 0 5px;">
+		<a href="/index.php?vars=/public/public/print/72/"><img name="ezuser-red" border="0" src="/images/print.gif" width="16" height="16" align="top" title="Detali perþiûra" alt="Spausdinti" /></a>
+		
+		<a href="/index.php?vars=/uzklausimai/uzklausimai/new/1/72/"><img border="0" src="/images/mail_red.gif" width="16" height="16" align="top" title="Siøsti praneðimà rinkmenos tvarkytojui" alt="Siøsti praneðimà rinkmenos tvarkytojui" /></a>
+	</td>
+</tr>
+</table>
+
+
+<br>
+
+<table cellpadding="0" cellspacing="0" border="0">
+<tr>
+	
+
+	
+	<td>
+	&nbsp;
+	</td>
+
+	
+
+	
+
+	
+	<td>
+	|&nbsp;&lt;&nbsp;1&nbsp;&gt;&nbsp;
+	</td>
+
+
+	
+	<td>
+	|&nbsp;<a class="path" href="/index.php?vars=/public/public/search/15/">2</a>&nbsp;
+	</td>
+
+	
+
+
+	
+	<td>
+	|&nbsp;<a class="path" href="/index.php?vars=/public/public/search/30/">3</a>&nbsp;
+	</td>
+
+	
+
+
+	
+	<td>
+	|&nbsp;<a class="path" href="/index.php?vars=/public/public/search/45/">4</a>&nbsp;
+	</td>
+
+	
+
+
+	
+	<td>
+	|&nbsp;<a class="path" href="/index.php?vars=/public/public/search/60/">5</a>&nbsp;
+	</td>
+
+	
+
+
+	
+	<td>
+	|&nbsp;<a class="path" href="/index.php?vars=/public/public/search/75/">6</a>&nbsp;
+	</td>
+
+	
+
+
+	
+	<td>
+	|&nbsp;<a class="path" href="/index.php?vars=/public/public/search/90/">7</a>&nbsp;
+	</td>
+
+	
+
+
+	
+	<td>
+	|&nbsp;<a class="path" href="/index.php?vars=/public/public/search/105/">8</a>&nbsp;
+	</td>
+
+	
+
+
+	
+	<td>
+	|&nbsp;<a class="path" href="/index.php?vars=/public/public/search/120/">9</a>&nbsp;
+	</td>
+
+	
+
+
+	
+	<td>
+	|&nbsp;<a class="path" href="/index.php?vars=/public/public/search/135/">10</a>&nbsp;
+	</td>
+
+	
+
+
+	
+	<td>
+	|&nbsp;<a class="path" href="/index.php?vars=/public/public/search/150/">11-17</a>&nbsp;
+	</td>
+
+	
+
+
+	
+	<td>
+	|&nbsp;<a class="path" href="/index.php?vars=/public/public/search/15/">Toliau&nbsp;&gt;&gt;</a>
+	</td>
+
+	
+
+</tr>
+</table>
+
+<hr noshade size="2">
+<button class="stdbutton" type="button" style="float:left;" onclick="window.open('/index.php?vars=/public/public/search/', '_self')">Á pradþià</button>
+<div align="right">
+Rodyti po: <input type="text" name="Max" value="15" size="3">
+<input class="stdbutton" type="submit" name="Refresh" value="Atnaujinti">
+</div>
+<table border="0">
+<tr>
+</tr>
+</table>
+</form>
+
+<!-- Main content view end -->
+
+    <br /><br /> <br /><br />
+
+    </td>
+    <td width="1%"><img src="/images/1x1.gif" width="2" height="1" border="0" alt="" /></td>
+
+
+</tr>
+</table>
+
+   </td>
+</tr>
+</table>
+	<div align="center"><table width="30%" border="0"><tr><td><hr noshade size="1"></td></tr><tr><td><div class="note" align="center">Informacijos rinkmenø sàraðas</div><div class="note" align="center"><a href="mailto:info@ivpk.lt">info@ivpk.lt</a></div></td></tr></table></div>
+</body>
+</html>

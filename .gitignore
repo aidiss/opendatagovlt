@@ -16,6 +16,12 @@ $RECYCLE.BIN/
 *.msm
 *.msp
 
+# Python
+*.egg
+*.egg-info
+*.pyc
+/.coverage
+
 # =========================
 # Operating System Files
 # =========================
@@ -28,7 +34,7 @@ $RECYCLE.BIN/
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
 
 # Thumbnails
 ._*
