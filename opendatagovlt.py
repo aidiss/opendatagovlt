@@ -1,26 +1,35 @@
 # coding: utf-8
 
 import os
+
 import requests
 from bs4 import BeautifulSoup
 
 
-def download_pages():
-    r = requests.get('http://opendata.gov.lt/')
-    url = ''
-    for number in range(0, 262, 15):
-        url = 'http://opendata.gov.lt/index.php?vars=/public/public/search/{}/'.format(number)
-        r = requests.get(url)
-        r.encoding = 'utf-8'
+def download_page(number):
+    url = 'http://opendata.gov.lt/index.php?vars=/public/public/search/{}/'.format(number)
+    r = requests.get(url)
+    r.encoding = 'utf-8'
+
+    if path == None:
         filename = "downloads/{}.html".format(number)
-        if not os.path.exists(os.path.dirname(filename)):
-            os.makedirs(os.path.dirname(filename))
-        with open(filename, "wb") as code:
-            code.write(r.content)
+    else:
+        filename = "{}".format(destination)
+    
+    if not os.path.exists(os.path.dirname(filename)):
+        os.makedirs(os.path.dirname(filename))
+    with open(filename, "wb") as code:
+        code.write(r.content)
 
+def download_pages(path=None):
+    for number in range(0, 262, 15):
+        download_page(number)
 
-def read_downloaded_pages():
-    f = open('downloads/{}.html'.format(0))
+def read_downloaded_pages(path=None):
+    if path == None:
+        f = open('downloads/{}.html'.format(0))
+    else:
+        f = open(path)
 
     soup = BeautifulSoup(f)
     the_table = soup.findAll('table')[6]

@@ -1,3 +1,6 @@
+*.sublime-*
+
+
 /downloads
 
 # Windows image file caches
