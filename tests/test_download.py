@@ -5,7 +5,7 @@ import opendatagovlt
 
 @httmock.all_requests
 def response_content(url, request):
-    return pres.resource_string('tests', 'fixtures/search_results.html')
+    return pres.resource_string('tests', 'fixtures/search_results.html') #kas čia yra ir kaip tai veikia? Ar to paties reikia prie kitų testų?
 
 
 @httmock.with_httmock(response_content)
