@@ -11,7 +11,3 @@ def response_content(url, request):
 @httmock.with_httmock(response_content)
 def test_download():
     opendatagovlt.download_pages()
-
-
-def test_download_page_alt0(number):
-    opendatagovlt.download_alt0()
