@@ -1,7 +1,6 @@
 *.sublime-*
-
-
-/downloads
+downloads
+data
 
 # Windows image file caches
 Thumbs.db
