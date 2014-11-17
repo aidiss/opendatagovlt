@@ -130,5 +130,29 @@ def main():
     #TODO do regex striping inplace
     #TODO retain hyperlinks
 
-result = main()
+
+def read_raw_entries(f = open("data/raw_entries.json")):
+    return json.load(f)
+
+for x in read_raw_entries():
+    url_is_pdf = None
+    url_is_doc = None
+    url_is_well_formatted = None
+
+    url = x["Internetinis adresas"]
+    if url == "":
+        print("url is empty")
+
+    elif "Nëra" in url:
+        print("url is Nëra, changing to empty")
+        url = ""
+    elif ("www" in url) and ("http" not in url):
+        print("Taisome url formatą")
+        url = "http://" + url
+    if url.endswith(".pdf"):
+        print("randome pdf, valio!", url)
+    else:
+        print(url)
+
+#result = main()
 #print (len(result))

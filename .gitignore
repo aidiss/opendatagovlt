@@ -1,6 +1,9 @@
 *.sublime-*
 downloads
 data
+.idea
+/idea
+/.idea
 
 # Windows image file caches
 Thumbs.db
