@@ -5,6 +5,7 @@ import json
 import requests
 from bs4 import BeautifulSoup
 
+
 # Flow nr1
 def download_page(number):
     url = 'http://opendata.gov.lt/index.php?vars=/public/public/search/{}/'.format(number)
@@ -16,9 +17,11 @@ def download_page(number):
     with open(filename, "wb") as code:
         code.write(r.content)
 
+
 def download_pages(destination=None):
     for number in range(0, 262, 15):
         download_page(number)
+
 
 def get_table_from_html(path):
     f = open(path)
@@ -37,6 +40,7 @@ def get_table_from_html(path):
                 new_row.append(item)
             new_table.append(new_row)
     return new_table
+
 
 def read_downloaded_pages(path):
     tables = []
@@ -57,9 +61,11 @@ def download_page_alt0(number):
     with open(filename, "wb") as code:
         code.write(r.content)
 
+
 def download_pages_alt0():
     for number in range(0, 600):
         download_page_alt0(number)
+
 
 def scrap_singular(path):
     table = []
@@ -69,9 +75,10 @@ def scrap_singular(path):
         try:
             line = (tds[0].text, tds[1].text)
             table.append(line)
-        except:
+        except "What is the expection here?":
             pass
     return table
+
 
 def merge_singulars():
     # creates one list out of many
@@ -80,12 +87,14 @@ def merge_singulars():
         path = r'd:\coding\opendatagovlt\downloads\singular\{}.html'.format(number)
         try:
             all_singulars.append(scrap_singular(path))
-        except:
+        except "What is the expection here?":
             pass
     return all_singulars
 
+
 def filter_entries(entries):
     return [x for x in entries if x[0][1] != '']
+
 
 def to_list_of_dicts(some_list):
     list_of_dicts = []
@@ -96,9 +105,11 @@ def to_list_of_dicts(some_list):
         list_of_dicts.append(new_dict)
     return list_of_dicts
 
+
 def dump_json(data):
     with open(r'd:\coding\opendatagovlt\data\raw_entries.json', 'w') as outfile:
-        json.dump(data, outfile, sort_keys = True, indent = 4) #ensure_ascii=False
+        json.dump(data, outfile, sort_keys=True, indent=4)  # ensure_ascii=False
+
 
 def alternative_flow():
     #download_page_alt0()
@@ -113,7 +124,7 @@ def main():
 
     columns = ['eil nr', 'Kodas', 'Pavadinimas',
                'Rinkmenos apibūdinimas', 'Kategorija (informacijos sritis)',
-               'Tvarkytojas', 'Internetinis adresas','int adresas']
+               'Tvarkytojas', 'Internetinis adresas', 'int adresas']
 
     return(pages)
     #TODO do regex striping inplace
