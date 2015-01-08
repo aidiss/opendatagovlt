@@ -1,0 +1,23 @@
+name: cvpp.lt
+
+#Paieskos puslaio formatas
+#http://cvpp.lt/index.php?limitstart=10
+#http://cvpp.lt/index.php?limitstart=20
+#...
+
+#Vieno iraso puslapio adreso pavyzdys
+#http://cvpp.lt/index.php?option=com_vpt&theme=new&task=view&tender_id=220521
+#svarbus tender_id
+
+#Atrodo, paprasciausiai ieskoti per paieskos puslapi atsizvelgiant i data, is paieskos puslapio gauti tender_id ir tada siusti.
+
+crowler:
+    start-urls: http://cvpp.lt/
+    navigate-urls: ?
+    download-urls: ?
+
+settings:
+    - filter_limit: 50
+      filter_from: YYYY-MM-DD
+
+how-often: hourly
