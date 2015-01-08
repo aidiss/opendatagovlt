@@ -1,0 +1,75 @@
+name: finmin.lt
+
+crowler:
+    start-urls: http://finmin.lt
+    navigate-urls: ?
+    download-urls: ?
+
+### labai nestrukturuotas puslapis, daug ivairiai pateiktos medziagos.
+how-often: hourly
+
+name: valstybes biudzetas 2015
+url: http://www.finmin.lt/web/finmin/2015_biudzetas  #pdf, word ir t.t. labai nestrukturuota
+
+name: aktualus duomenys
+url: http://www.finmin.lt/web/finmin/aktualus_duomenys
+
+http://www3.lrs.lt/pls/inter3/dokpaieska.showdoc_l?p_id=489453&p_tr2=2
+
+name: valstybes biudzetas 2014
+url: http://www.finmin.lt/web/finmin/2014biuddata
+http://www3.lrs.lt/pls/inter3/dokpaieska.showdoc_l?p_id=462759&p_tr2=2
+
+#subdataset
+name: Lietuvos ekonominių rodiklių projekcijos
+
+name: Aktualūs valstybės finansų duomenys
+url: http://www.finmin.lt/web/finmin/aktualus_duomenys
+
+    name: Lietuvos ekonominių rodiklių projekcijos ir projekcijų perspektyvos 
+        url: http://www.finmin.lt/web/finmin/aktualus_duomenys/makroekonomika
+        url: http://www.finmin.lt/web/finmin/aktualus_duomenys/makroekonomika#1
+        url: http://www.finmin.lt/web/finmin/aktualus_duomenys/makroekonomika#2
+        url: http://www.finmin.lt/web/finmin/aktualus_duomenys/makroekonomika#3
+    name: Nacionalinio biudžeto vykdymo duomenys 
+        url: http://www.finmin.lt/web/finmin//auktualus_duomenys/biudzeto_pajamos/nacionalinis_biudzetas
+    name: Valstybės biudžeto vykdymo duomenys 
+        url: http://www.finmin.lt/web/finmin//auktualus_duomenys/biudzeto_pajamos/savivaldybiu_biudzetai
+    name: Savivaldybių biudžetų duomenys 
+    name: Seimo patvirtinti valstybės ir savivaldybių biudžetai 
+        url: http://www.finmin.lt/c/portal/layout?p_l_id=PUB.1.61
+        comment: "desineje lentele, kurioje biudzetai range(1991, 2013), taciau visu ju pavadinimai skiriasi"
+        2013: http://www.finmin.lt/web/finmin/2013_biudzetas
+        2012: http://www.finmin.lt/web/finmin/2012biudzetas
+        2011: http://www.finmin.lt/web/finmin/2011biudzetas
+        2010: http://www.finmin.lt/web/finmin/2010biudz
+
+        url: http://www3.lrs.lt/pls/inter3/dokpaieska.showdoc_l?p_id=2613&p_query=&p_tr2=
+        url: http://www3.lrs.lt/pls/inter3/dokpaieska.showdoc_l?p_id=1175&p_query=&p_tr2=
+    name: Valdžios sektoriaus skola 
+    url: http://www.finmin.lt/web/finmin/aktualus_duomenys/deficitas
+        name: Centrinė valdžia pagal VFSV 2001
+        name: Valdžios sektorius pagal VFSV 2001
+        name: Valdžios sektorius pagal Perviršinio deficito procedūrą (Mastrichto kriterijus)
+    name: Centrinės valdžios skola 
+    name: Valdžios sektoriaus pertekliaus / deficito duomenys 
+
+
+    - name: ES paramos įsisavinimas 
+      url: http://www.finmin.lt/web/finmin/aktualus_duomenys/esparama
+
+    - name: Valstybės fondai 
+      url: http://www.finmin.lt/web/finmin//aktualus_duomenys/valstybes_fondai
+    - name: Palūkanos ir delspinigiai 
+      url: http://www.finmin.lt/web/finmin/palukanos
+    - name: Vyriausybės skolinimosi statistika 
+      url: http://www.finmin.lt/web/finmin//vyrskol_stat
+    - name:  Valstybės konsoliduotųjų finansinių ataskaitų rinkiniai
+      url: http://www.finmin.lt/web/finmin/kons_atask 
+
+    - name: Nacionaliniai finansinių ataskaitų rinkiniai 
+        url: http://www.finmin.lt/web/finmin/nacfarink
+
+
+    - name: Apskaitos duomenys pagal ES Tarybos direktyvą Nr. 2011/85/ES 
+      url: http://www.finmin.lt/web/finmin/direktyva85
