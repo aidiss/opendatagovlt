@@ -1,0 +1,54 @@
+name: sic.hi.lt
+crowler:
+  start-urls:
+    - http://sic.hi.lt/html/fondas.htm
+  download-urls:
+    - name: table
+      pattern: http://sic.hi.lt/html/fondas.htm
+      actions: [follow, download]
+    - name: details
+      pattern: http://sic.hi.lt/sergam/Ligos_{}.xlsx range(2001,2013)
+      pattern: http://sic.hi.lt/sergam/Ligos_{}.xlsx range(2001,2013)
+      pattern: http://sic.hi.lt/sergam/Ligos_{}.xlsx range(2001,2013)
+      actions: [download]
+scraper:
+  - name: dataset
+    source: details
+    parser: xlsx
+    xpath: /html/body/table
+    primary-key: [code]
+    fields:
+      - name: code
+        type: integer
+        match: Kodas
+
+
+name: duomenu_fondas
+type: excel_online
+url: https://onedrive.live.com/view.aspx?resid=96637663BE5E56BC!107&app=Excel&authkey=!AAllNtLE1ODj7lA
+  sheet_names: [duomenu_fondas, apibrezimai, grafikai, nuorodos] #kiekvienam sheetui laukus aprasyti? #ar cia utomatiskai galima extractint.
+
+
+name: mirties atveju ir ju priezasciu valstybes registras
+action-onclick: window.open('mirtpr.php','Info');
+columns: column1 + column2
+x-path: //*[@id="tbl"]
+
+name: sveikatos statiska
+url: http://sic.hi.lt/
+action: crawl all in
+pattern: //*[@id="Tree"]
+comment: html ir is duomenu isvesti grafai
+
+
+examples:
+  http://sic.hi.lt/sergam/Ligos_2013.xlsx
+  http://sic.hi.lt/sergam/Sergantys_asmenys_2013.xlsx
+  http://sic.hi.lt/sergam/Asmenys(+)_2013.xlsx
+
+  ...
+  http://sic.hi.lt/sergam/Ligos_2001.xlsx
+  http://sic.hi.lt/sergam/Sergantys_asmenys_2001.xlsx
+  http://sic.hi.lt/sergam/Asmenys(+)_2001.xlsx
+
+
